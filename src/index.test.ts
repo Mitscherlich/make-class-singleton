@@ -12,7 +12,7 @@ describe('Singleton', () => {
       const Wrapped = Singleton(Test)
       const t1 = new Wrapped()
       const t2 = new Wrapped()
-      expect(t1).toBe(t2)
+      expect(t1 === t2).toBe(true)
     })
 
     it('wrap target class with custom options', () => {
@@ -21,10 +21,10 @@ describe('Singleton', () => {
       const Wrapped = Singleton(Test, { container })
       const t1 = new Wrapped()
       const t2 = new Wrapped()
-      expect(t1).toBe(t2)
+      expect(t1 === t2).toBe(true)
       expect(container.has(Wrapped))
-      expect(container.get(Wrapped)).toBe(t1)
-      expect(container.get(Wrapped)).toBe(t2)
+      expect(container.get(Wrapped) === t1).toBe(true)
+      expect(container.get(Wrapped) === t2).toBe(true)
     })
   })
 
@@ -33,7 +33,7 @@ describe('Singleton', () => {
       @Singleton class Test {}
       const t1 = new Test()
       const t2 = new Test()
-      expect(t1).toBe(t2)
+      expect(t1 === t2).toBe(true)
     })
 
     it('with custom options', () => {
@@ -41,10 +41,10 @@ describe('Singleton', () => {
       @Singleton({ container }) class Test {}
       const t1 = new Test()
       const t2 = new Test()
-      expect(t1).toBe(t2)
+      expect(t1 === t2).toBe(true)
       expect(container.has(Test))
-      expect(container.get(Test)).toBe(t1)
-      expect(container.get(Test)).toBe(t2)
+      expect(container.get(Test) === t1).toBe(true)
+      expect(container.get(Test) === t2).toBe(true)
     })
   })
 })
