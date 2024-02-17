@@ -1,6 +1,6 @@
 {
   "name": "@m9ch/make-class-singleton",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Convert ES-Class into Singleton",
   "license": "MIT",
   "files": [
