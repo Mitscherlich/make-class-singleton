@@ -1,7 +1,7 @@
 {
-  "name": "my-ts-lib",
+  "name": "@m9ch/make-class-singleton",
   "version": "0.0.0",
-  "description": "My awesome typescript library",
+  "description": "Convert ES-Class into Singleton",
   "license": "MIT",
   "files": [
     "dist"
@@ -18,9 +18,12 @@
   "scripts": {
     "build": "unbuild",
     "build:stub": "unbuild --stub",
-    "dev": "vite example/ -c vite.config.js",
     "test": "vitest run",
-    "release": "bumpp package.json && pnpm publish"
+    "release": "bumpp package.json && pnpm publish",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@m9ch/global-this": "^0.1.1"
   },
   "devDependencies": {
     "@m9ch/eslint-config-all": "0.3.2",
@@ -30,5 +33,8 @@
     "unbuild": "^2.0.0",
     "vite": "5.1.3",
     "vitest": "1.3.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

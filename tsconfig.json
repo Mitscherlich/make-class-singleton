@@ -8,7 +8,9 @@
     "skipLibCheck": true,
     "noUnusedLocals": true,
     "noImplicitAny": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "experimentalDecorators": true,
+    "types": ["vitest/globals"]
   },
   "exclude": [
     "node_modules",
